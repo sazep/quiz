@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang='uk'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Quiz</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="icon" href="favicon.ico" />
+</head>
+<header>
+    <h1>Quiz</h1>
+    <img id="logo" src="https://t3.ftcdn.net/jpg/01/39/64/22/360_F_139642282_HTn8M771CvNrsWNMOAkK7IC9tEXd7mqE.jpg" alt="Лого">
+</header>
+<body>
+    <div class="card_qw">
+        <div id="timer">
+            <span id="minutes">00</span>:<span id="seconds">00</span>
+        </div>
+        <div class="quiz">Load...</div>
+        <div class="ans">
+            <div>Load...</div>
+            <div>Load...</div>
+            <div>Load...</div>
+            <div>Load...</div>
+            <div>Load...</div>
+        </div>
+    </div>
+</body>
+<footer>
+    <div id="results">
+        <div>Добре: <span id="correct-count"></span></div>
+        <div>Помилок: <span id="error-count"></span></div>
+        <div>Питань: <span id="total-count"></span></div>
+        <div>Це: <span id="percentage"></span></div>
+    </div>
+</footer>
+<!-- <script type="module" src="js.js"></script>-->
+<script src='https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js'></script>
+<script type="module" src="all.js"></script>
+</html>
