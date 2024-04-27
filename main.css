@@ -1,0 +1,139 @@
+header {
+    background-color: #231f20;
+    color: #fff;
+    text-align: center;
+    padding: 3% 1%;
+    width: 100%;
+}
+
+body{
+    margin: 0;
+}
+
+body::-webkit-scrollbar {
+    width: 1.2%;
+}
+
+body::-webkit-scrollbar-track {
+    background: #ccc;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #231f20;
+    border: 0.3em solid #231f20;
+}
+
+#logo {
+    max-width: 10%;
+    max-height: 10%;
+}
+
+footer {
+    background-color: #fff;
+    text-align: center;
+    padding: 1%;
+    height: 20%;
+    margin-top: 2%;
+}
+
+.card_qw {
+    font-size: 250%;
+    text-align: center;
+}
+
+.quiz {
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-left: 10%;
+    width: 70%;
+    padding: 5%;
+}
+
+.ans {
+    margin-left: 10%;
+    width: 80%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.ans div {
+    border: 2px solid rgb(182, 181, 181);
+    border-radius: 7%;
+    width: 18%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.selected-correct-answer {
+    background-color: #a3ebab;
+    border: 5px solid #1f8197!important; /* Используем !important, чтобы переопределить стиль */
+}
+
+.selected-wrong-answer {
+    background-color: #ffd5dc;
+    border: 5px solid #1f8197!important; /* Используем !important, чтобы переопределить стиль */
+}
+
+.correct-answer {
+    background-color: #a3ebab;
+    border: 3px solid #0ca50c!important; /* Используем !important, чтобы переопределить стиль */
+}
+
+
+.wrong-answer {
+    background-color: #ffd5dc;
+    border: 3px solid #ff6161!important; /* Используем !important, чтобы переопределить стиль */
+}
+
+#results {
+    color: #231f20;
+    display: none;
+    margin-top: 20px;
+}
+
+#results div {
+    margin-bottom: 10px;
+}
+
+
+.time-up {
+    background-color: #cacaca;
+    border: 2px solid #22222E!important; /* Используем !important, чтобы переопределить стиль */
+}
+
+.start {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.btn_start {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn_start:hover {
+    background-color: #45a049;
+}
+
+.progress-bar {
+    width: 100%;
+    background-color: #d9d8d8;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 20px;
+    background-color: #4caf50;
+    transition: width 1.5s ease-in-out;
+}
