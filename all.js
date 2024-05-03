@@ -6,6 +6,8 @@ let qws = NaN
 let selectedAnswer = true
 let questionsLog = []
 let resultText = NaN
+let aboba = NaN
+let questionCounter = document.getElementById('questionCounter')
 
 function randint(min,max){// генерирует от до
     let n = Math.random()
@@ -66,6 +68,7 @@ class Question {
                 }
             })
             this.timer.start()
+            questionCounter.innerHTML = `<p><b>Вопрос ${this.createdQuestions}/${this.totalQuestions}</b></p>`
             for (let ans of ans_arr) {
                 ans.addEventListener('click', () => {
                     if (allowAnswerSelection) {
@@ -100,6 +103,7 @@ class Question {
         } else {
             document.querySelector('.card_qw').style.display = 'none'
             document.querySelector('.ans').style.display = 'none'
+            document.querySelector('#questionCounter').style.display = 'none'
         
             let errors = this.totalQuestions - this.correct_count
             let percentage = Math.round((this.correct_count / this.totalQuestions) * 100)
@@ -111,10 +115,20 @@ class Question {
             questionsLog.forEach(question => {
                 totalElapsedTime += question.timeSpent
             })
+            if (percentage < 20) {
+                aboba = "Ви можеш краще! Продовжуйте вчитися!"
+            } else if (percentage >= 20 && percentage < 80) {
+                aboba = "Гарна спроба! Спробуйте ще раз і покращуйте свої результати!"
+            } else if (percentage >= 80 && percentage < 100) {
+                aboba = "Чудово спрацьовано! Продовжуй в тому дусі!"
+            } else if (percentage == 100) {
+                aboba = "Вітаю! Ви відмінно впорались з усіма завданнями!"
+            } 
             let averageTime = totalElapsedTime / this.totalQuestions
             resultText.innerHTML = `
             <div class='card_qw' style="display:block">
             <h2>Ваші Результати:</h2>
+            <h4>${aboba}</h4>
             <section>
                 <div class="result-item">
                     <p class="result-number">${this.correct_count}</p>
