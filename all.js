@@ -55,7 +55,7 @@ class Question {
             if (this.timer) {
                 this.timer.stop()
             }
-            this.timer = new Timer(20, () => {
+            this.timer = new Timer(60, () => {
                 if (allowAnswerSelection) {
                     allowAnswerSelection = false
                     ans_arr.forEach(ans => ans.classList.add('time-up'))
