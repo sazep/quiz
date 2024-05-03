@@ -2,7 +2,6 @@ let div_qw = document.querySelector('.quiz')
 let div_ans = document.querySelector('.ans')
 let ans_arr = div_ans.querySelectorAll('div')
 let allowAnswerSelection = true
-let display_menu = false
 let qws = NaN
 let selectedAnswer = true
 let questionsLog = []
@@ -54,7 +53,7 @@ class Question {
             if (this.timer) {
                 this.timer.stop()
             }
-            this.timer = new Timer(21, () => {
+            this.timer = new Timer(20, () => {
                 if (allowAnswerSelection) {
                     allowAnswerSelection = false
                     ans_arr.forEach(ans => ans.classList.add('time-up'))
@@ -80,9 +79,6 @@ class Question {
                             correctAnswer: this.correctAnswer,
                             allAnswers: this.ans,
                             timeSpent: this.timeSpent,
-                        }
-                        if (this.timer) {
-                            this.timer.stop()
                         }
                         if (selectedAnswer == this.correctAnswer) {
                             questionData.isCorrect = true
@@ -153,7 +149,7 @@ class Question {
         
                 let quizDisplay = document.createElement('div')
                 quizDisplay.classList.add('quiz')
-                quizDisplay.textContent = `${questionData.question} Витрачений час: ${questionData.timeSpent} секунди`
+                quizDisplay.textContent = `${questionData.question} Витрачений час: ${questionData.timeSpent} сек`
                 questionContainer.appendChild(quizDisplay)
         
                 let ansDisplay = document.createElement('div')
@@ -196,12 +192,16 @@ class Question {
             this.correctAnswer = n1 - n2
         }
         if (operation == '*') {
+            n1 = randint(1,21)
+            n2 = randint(1,21) 
             this.correctAnswer = n1 * n2
         } 
         if (operation == '/'){
-            n2 = randint(1,101)
+            n1 = randint(1,21)
+            n2 = randint(1,21)
             while(n1%n2 !=0){
-                n2 = randint(1,101)
+                n1 = randint(1,21)
+                n2 = randint(1,21)
             }
             this.correctAnswer = n1 / n2
         }
@@ -210,8 +210,8 @@ class Question {
         this.ans = [this.correctAnswer]
 
         while (this.ans.length < 5) { 
-            let incorrectAnswer = this.correctAnswer + randint(0,20)-randint(0,20)
-            if (incorrectAnswer != this.correctAnswer && incorrectAnswer != this.ans.includes(incorrectAnswer)) {
+            let incorrectAnswer = this.correctAnswer + randint(1,21)-randint(1,22)
+            if (incorrectAnswer != this.correctAnswer && this.ans.indexOf(incorrectAnswer) === -1) {
                 this.ans.push(incorrectAnswer)
             }
         }
@@ -258,32 +258,15 @@ function startTimer(seconds, callback) {
 
 function hideMenu() {
     setTimeout(function() {
-        display_menu = true
         document.querySelector('.menu').style.display = 'none'
         document.querySelector('.card_qw').style.display = 'block'
     }, 100)
 }
 document.getElementById('btn_logo').addEventListener('click', function() {
     setTimeout(function() {
-        document.querySelector('.menu').style.display = 'block'
-        document.querySelector('.card_qw').style.display = 'none'
-        document.querySelector('.ans').style.display = 'flex'
-        resultText.style.display= 'none'
-        questionsLog = []
-        allowAnswerSelection = true
-        resultText = NaN
+        window.location.reload()
     }, 100)
 })
-document.getElementById('btn_logo').addEventListener('click', function() {
-    setTimeout(function() {
-        display_menu = false;
-        document.querySelector('.menu').style.display = 'block';
-        document.querySelector('.card_qw').style.display = 'none';
-        document.querySelector('.ans').style.display = 'flex';
-        resultText.style.display= 'none';
-    }, 100)
-})
-
 document.getElementById('quiz3').addEventListener('click', function() {
     hideMenu()
     qws = new Question(3)
