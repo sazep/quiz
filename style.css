@@ -337,5 +337,9 @@ section {
     font-weight: bold;    
 }
 .result-label {
-    font-size: 50%;
+    font-size: 50%; 
+}
+
+#questionCounter {
+    padding: 5px 10px;
 }
