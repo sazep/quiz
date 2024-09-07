@@ -1,0 +1,14 @@
+{
+    "title": "Quiz",
+    "headerTitle": "Quiz",
+    "chooseTest": "Choose a Test:",
+    "quiz3": "3 Questions",
+    "quiz5": "5 Questions",
+    "quiz10": "10 Questions",
+    "quiz15": "15 Questions",
+    "loading": "Loading...",
+    "correct": "Correct:",
+    "errors": "Errors:",
+    "totalQuestions": "Total Questions:",
+    "percentage": "Percentage:"
+  }  
