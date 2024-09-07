@@ -1,0 +1,14 @@
+{
+  "title": "Тест",
+  "headerTitle": "Тест",
+  "chooseTest": "Виберіть Тест:",
+  "quiz3": "3 Питання",
+  "quiz5": "5 Питань",
+  "quiz10": "10 Питань",
+  "quiz15": "15 Питань",
+  "loading": "Завантаження...",
+  "correct": "Добре:",
+  "errors": "Помилок:",
+  "totalQuestions": "Питань:",
+  "percentage": "Це:"
+}

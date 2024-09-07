@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang='uk'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title data-lang="title">Quiz</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="icon" href="src/ci.ico" />
+</head>
+<header>
+    <h1 data-lang="headerTitle">Quiz</h1>
+    <div class="container">
+        <img id="logo" src="https://t3.ftcdn.net/jpg/01/39/64/22/360_F_139642282_HTn8M771CvNrsWNMOAkK7IC9tEXd7mqE.jpg" alt="Лого">
+        <button id='btn_logo' class="overlay-button"></button>
+    </div>
+</header>
+<body>
+    <div class="menu">
+        <h2 data-lang="chooseTest" style="text-align:center;">Виберіть Тест:</h2>
+        <button id="quiz3" class="buttons" data-lang="quiz3">3 Питання</button>
+        <button id="quiz5" class="buttons" data-lang="quiz5">5 Питаннів</button>
+        <button id="quiz10" class="buttons" data-lang="quiz10">10 Питаннів</button>
+        <button id="quiz15" class="buttons" data-lang="quiz15">15 Питаннів</button>
+        <!-- <button id="quizTime" data-lang="quizTime">за 1 хвилину</button> -->
+    </div>
+    <div class="card_qw">
+        <div id="timer">
+            <span id="minutes">00</span>:<span id="seconds">00</span>
+        </div>
+        <div class="quiz" data-lang="loading">Load...</div>
+        <div class="ans">
+            <div data-lang="loading">Load...</div>
+            <div data-lang="loading">Load...</div>
+            <div data-lang="loading">Load...</div>
+            <div data-lang="loading">Load...</div>
+            <div data-lang="loading">Load...</div>
+        </div>
+        <div id="questionCounter"></div>
+    </div>
+    <div id="results">
+        <div data-lang="correct">Добре: <span id="correct-count"></span></div>
+        <div data-lang="errors">Помилок: <span id="error-count"></span></div>
+        <div data-lang="totalQuestions">Питань: <span id="total-count"></span></div>
+        <div data-lang="percentage">Це: <span id="percentage"></span></div>
+    </div>
+    <footer>
+        <!-- Your footer with social media icons -->
+    </footer>
+</body>
+<script src='https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js'></script>
+<script type="module" src="all.js"></script>
+</html>
