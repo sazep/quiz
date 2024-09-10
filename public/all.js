@@ -126,33 +126,34 @@ class Question {
             } 
             let averageTime = totalElapsedTime / this.totalQuestions
             resultText.innerHTML = `
-            <div class='card_qw' style="display:block">
-            <h2>Ваші Результати:</h2>
-            <h4>${aboba}</h4>
-            <section>
-                <div class="result-item">
-                    <p class="result-number">${this.correct_count}</p>
-                    <p class="result-label">Вірно</p>
-                </div>
-                <div class="result-item">
-                    <p class="result-number">${errors}</p>
-                    <p class="result-label">Помилок</p>
-                </div>
-                <div class="result-item">
-                    <p class="result-number">${averageTime.toFixed(2)}</p>
-                    <p class="result-label">Середній час відповіді (сек)</p>
-                </div>
-                <div class="result-item">
-                    <p class="result-number">${percentage}%</p>
-                    <p class="result-label">Відсоток правильних відповідей</p>
-                </div>
-            </section>
-                <span>Вірних відповідей: ${this.correct_count} із ${this.totalQuestions} Питаннь</span>
-                <div class="progress-bar">
-                    <div class="progress" style="width: ${percentage}%"></div>
-                </div>
-            </div>
-            `
+    <div class='card_qw' style="display:block">
+    <h2>${translations[currentLanguage]["yourResults"]}</h2>
+    <h4>${aboba}</h4>
+    <section>
+        <div class="result-item">
+            <p class="result-number">${this.correct_count}</p>
+            <p class="result-label">${translations[currentLanguage]["correct"]}</p>
+        </div>
+        <div class="result-item">
+            <p class="result-number">${errors}</p>
+            <p class="result-label">${translations[currentLanguage]["errors"]}</p>
+        </div>
+        <div class="result-item">
+            <p class="result-number">${averageTime.toFixed(2)}</p>
+            <p class="result-label">${translations[currentLanguage]["averageTime"]}</p>
+        </div>
+        <div class="result-item">
+            <p class="result-number">${percentage}%</p>
+            <p class="result-label">${translations[currentLanguage]["percentage"]}</p>
+        </div>
+    </section>
+    <span>${translations[currentLanguage]["correct"]} ${this.correct_count} ${translations[currentLanguage]["totalQuestions"]} ${this.totalQuestions}</span>
+    <div class="progress-bar">
+        <div class="progress" style="width: ${percentage}%"></div>
+    </div>
+</div>
+`
+
             
         
             let questionsLogDisplay = document.createElement('div')
@@ -368,3 +369,6 @@ const updateText = () => {
 
 // Загружаем переводы для начального языка
 loadTranslations(currentLanguage)
+
+this.display()
+updateText()
